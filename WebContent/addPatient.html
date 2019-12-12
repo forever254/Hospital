@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div>
+			姓名：<input type="text" id="pName" name="pName" /></br>
+			年龄：<input type="text" id="pAge" name="pAge" /></br>
+			性别：
+			<select id="pSex" name="pSex">
+				<option value="男">男</option>
+				<option value="女">女</option>
+			</select>
+			</br>
+			电话：<input type="text" id="pPhone" name="pPhone" /></br>
+			<input type="button" value="增加" id="addBtn" />
+
+		</div>
+		<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="js/global.js"></script>
+		<script>
+			$('#addBtn').click(function() {
+				var url = baseUrl + '/AddPatientServlet';
+				var parms = {
+					P_name: $('#pName').val(),
+					P_age: $('#pAge').val(),
+					P_sex: $('#pSex').val(),
+					P_phone: $('#pPhone').val(),
+				};
+				var temp = parms.P_name;
+				var temp2 = parms.P_phone;
+				//console.log(params);
+				$.post(url, parms, function(data) {
+						alert('增加成功');
+						location.href = "newAddRegistration.html?" + "pname=" + temp + "&pphone=" + temp2;
+					})
+					.error(function() {
+						alert("增加失败");
+					});
+			});
+		</script>
+	</body>
+
+</html>

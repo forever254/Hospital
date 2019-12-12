@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="css/owl.carousel.css">
+		<link rel="stylesheet" href="css/owl.theme.default.min.css">
+		<link rel="stylesheet" href="css/tooplate-style.css">
+	</head>
+
+	<body>
+		<section id="appointment1">
+			<select name="doctor" id="doctor" class="form-control" style="text-align:center;text-align-last:center;">
+			</select>
+			<button type="button" id="addBtn" name="addBtn" class="form-control">Submit Button</button>
+		</section>
+		<script src="js/jquery-1.11.0.min.js"></script>
+		<script src="js/param.js"></script>
+
+		<script>
+			var pid = getParam('pid');
+			var url = 'http://127.0.0.1:8080/Hospital/QueryDoctorServlet';
+			$.getJSON(url, function(data) {
+				$.each(data, function(index, item) {
+					console.log(item);
+					if(item.sub.kid == 102) {
+						var opt = '<option value ="' + item.did + '">' + item.dname + '</option>';
+					}
+					$('#doctor').append(opt);
+					//					
+				});
+			});
+			$('#addBtn').click(function() {
+				var url = 'http://127.0.0.1:8080/Hospital/AddRegistrationServlet';
+				var parms = {
+					G_line: 5,
+					P_idFK: pid,
+					P_IDCard: 5,
+					J_idFK: 500,
+					K_idFK: 102,
+					D_idFK: $('#doctor').val(),
+					G_total: 2
+				}
+				//console.log(params);
+				$.ajax({
+						url:url,
+						type:'post',
+						data:parms,
+						success:function(data){
+							alert('successsff')
+							
+							window.open('http://127.0.0.1:8080/Hospital/jession.html?Pid='+pid+'')
+						},
+						error:function(xhr){
+							console.log("---:::"+JSON.stringify(xhr))
+							alert('fail')
+						}
+					});
+			});
+		</script>
+	</body>
+
+</html>

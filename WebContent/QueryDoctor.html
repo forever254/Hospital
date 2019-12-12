@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="zh">
+	<!--
+	作者：Moline-x
+	时间：2019-06-25
+	描述：医生查询前后端交互
+-->
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0" name="viewport">
+		<title>老刘の医院——医生</title>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/default.css">
+		<link rel="stylesheet" href="css/responsive-tables.min.css" type="text/css">
+		<link rel="stylesheet" href="css/fancyInput.css" />
+		<script src="js/jquery-1.11.0.min.js"></script>
+
+		<style type="text/css">
+			.text-effect {
+				display: block;
+				font-size: 130px;
+				color: #fff;
+				text-align: center;
+				text-shadow: 0px -1px 4px white, 0px -2px 10px yellow, 0px -10px 20px #ff8000, 0px -18px 40px red;
+				position: relative;
+			}
+			
+			@media only screen and (max-width: 990px) {
+				.text-effect {
+					font-size: 100px;
+				}
+			}
+			
+			@media only screen and (max-width: 767px) {
+				.text-effect {
+					font-size: 80px;
+				}
+			}
+			
+			@media only screen and (max-width: 479px) {
+				.text-effect {
+					font-size: 50px;
+				}
+			}
+			/*表格样式 */
+			
+			table {
+				width: 100%;
+				margin: 1em 0 2em;
+				font-size: .938em;
+				border-collapse: collapse;
+			}
+			
+			caption {
+				margin: 1em 0 .7em 0;
+				text-align: center;
+				font-weight: bold;
+				font-size: 120%;
+				letter-spacing: .5px;
+				color: #fff;
+			}
+			
+			th {
+				text-align: left;
+				padding: .5em .5em;
+				font-weight: bold;
+				border-top: solid 3px #ccc;
+				border-bottom: solid 1px #ccc;
+				background: #66677c;
+			}
+			
+			td {
+				padding: .5em .5em;
+				border-bottom: solid 1px #ccc;
+				font-family: "微软雅黑";
+			}
+			/*按钮样式*/
+			
+			#adddoctor {
+				display: inline-block;
+				border-radius: 4px;
+				background-color: #f4511e;
+				border: none;
+				color: #FFFFFF;
+				text-align: center;
+				font-size: 20px;
+				padding: 10px;
+				width: 150px;
+				transition: all 0.5s;
+				cursor: pointer;
+				margin: 5px;
+				float: right;
+			}
+			
+			#adddoctor span {
+				cursor: pointer;
+				display: inline-block;
+				position: relative;
+				transition: 0.5s;
+			}
+			
+			#adddoctor span:after {
+				content: '»';
+				position: absolute;
+				opacity: 0;
+				top: 0;
+				right: -20px;
+				transition: 0.5s;
+			}
+			
+			#adddoctor:hover span {
+				padding-right: 25px;
+			}
+			
+			#adddoctor:hover span:after {
+				opacity: 1;
+				right: 0;
+			}
+			
+			.doctorbtn {
+				background-color: #008CBA;
+				border: none;
+				border-radius: 5px;
+				cursor: pointer;
+				outline: none;
+				box-shadow: 0 4px #999;
+				color: white;
+				padding: 8px 15px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				font-size: 15px;
+			}
+			
+			.doctorbtn:hover {
+				background-color: #3e8e41;
+			}
+			
+			.doctorbtn:active {
+				background-color: #3e8e41;
+				box-shadow: 0 5px #666;
+				transform: translateY(4px);
+			}
+			
+			#gbn {
+				cursor: pointer;
+			}
+			
+			.add {
+				background: rgb(73, 74, 95);
+				color: #D5D6E2;
+			}
+		</style>
+		<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+	</head>
+
+	<body>
+		<article class="htmleaf-container">
+			<header class="htmleaf-header">
+				<h1 class="text-effect">医生查询<span>The best choice for you</span></h1>
+				<div class="htmleaf-links">
+					<a class="htmleaf-icon icon-htmleaf-home-outline" href="Menu.html" title="老刘の医院" target="_blank"><span> 老刘の医院</span></a>
+					<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" id="gbn" title="返回主页" target="_blank"><span> 返回主页</span></a>
+				</div>
+			</header>
+			<table class="respond">
+				<caption>你的选择是正确的~相信我！<button id="adddoctor" style="vertical-align:middle"><span>医生入职</span></button></caption>
+
+				<thead>
+					<tr>
+						<th>医生编号</th>
+						<th>医生姓名</th>
+						<th>医生性别</th>
+						<th>医生年龄</th>
+						<th>联系电话</th>
+						<th>医生等级</th>
+						<th>科室编号</th>
+						<th>从医经验</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody id="doctor">
+					<script type="text/javascript" src="js/global.js"></script>
+					<script>
+						$('#gbn').click(function() {
+							window.location.href = "Menu.html";
+						});
+					</script>
+		</article>
+		<script type="text/javascript" src="js/param.js"></script>
+		<script src="js/jquery.responsive-tables.min.js"></script>
+		<script src="js/app1.js"></script>
+		<script type="text/javascript" src="js/QueryDoctor.js" ></script>
+	</body>
+
+</html>

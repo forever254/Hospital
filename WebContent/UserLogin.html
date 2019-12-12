@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>申请挂号</title>
+  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+  <meta name="author" content="Vincent Garreau" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" media="screen" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+  <link rel="stylesheet" href="http://jrain.oscitas.netdna-cdn.com/tutorial/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="css/bootsnav.css" />
+  <link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+</head>
+<body>
+
+<div id="particles-js">
+		<div class="login">
+			<div class="login-top">
+				用户登录
+				<div class="htmleaf-links">
+					<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline"  onclick="window.location='ManagerLogin.html'" href="###" title="返回主页"><span> 返回主页</span></a>
+				</div>
+			</div>
+			<div class="login-center clearfix">
+				<div class="login-center-img"><img src="images/name.png"/></div>
+				<div class="login-center-input">
+					<input type="text" name="" value=""id="inputID" placeholder="请输入身份证号" onfocus="this.placeholder=''" onblur="this.placeholder='身份证号码...'"/>
+					<div class="login-center-input-text">身份证号</div>
+				</div>
+			</div>
+			<div class="login-center clearfix">
+				<div class="login-center-img"><img src="images/password.png"/></div>
+				<div class="login-center-input">
+					<input type="text" name=""id="inputname" placeholder="请输入姓名" onfocus="this.placeholder=''" onblur="this.placeholder='姓名...'"/>
+					<div class="login-center-input-text">姓名</div>    <!-- 点击后在input外边加上字 -->
+				</div>
+			</div>
+			<div class="login-button" onclick="Btn()">
+				登陆
+			</div>
+		</div>
+		<div class="sk-rotating-plane"></div>
+</div>
+
+<!-- scripts -->
+<script src="js/particles.min.js"></script>
+<script type="text/javascript" src="js/global.js" ></script>
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+
+<script type="text/javascript">
+	
+
+		//页面加载
+		function Btn(){
+			var P_IdCard=$("#inputID").val();
+			var inputname = $("#inputname").val();
+		//	alert(P_IdCard);
+			var parms = {
+				P_IdCard:$("#inputID").val()
+			}
+			
+			var url=baseUrl+'/GetPeople'
+			$.post(url,parms,function(jsonStr){
+				//alert(jsonStr);
+				//console.log(jsonStr.Name);
+				if(jsonStr==null)
+				{alert("不成功");}
+				else if(jsonStr.Name==inputname)
+					{window.location.href = "index.html";}
+				else
+					{alert("您的姓名与身份证号码不符");}
+			},"json");
+			
+		}
+/*
+			//发送ajax请求  
+			// $.ajax $.post $.get $.getJSON
+			//$.post(请求路径,请求参数,回调函数,返回值的类型)
+			//请求参数：{key:value,key1:value1}
+
+     var URL='http://localhost:8080/Hospital/GetPeople'
+
+			$.post('URL', {
+				P_IdCard=P_IdCard;
+			}, function(people) {
+				console.log(people);
+			}, json);*/
+     /*url:发送请求地址。
+		data:待发送 Key/value 参数。
+		callback:发送成功时回调函数。
+		type:返回内容格式，xml, html, script, json, text, _default。
+     */
+
+
+</script>
+</body>
+</html>

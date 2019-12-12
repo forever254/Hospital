@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>医院</title>
+		<link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="http://jrain.oscitas.netdna-cdn.com/tutorial/css/fontawesome-all.min.css">
+		<link rel="stylesheet" href="css/bootsnav.css" />
+		<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+		<style>
+			.demo {
+				background-color: #54a0ff;
+				padding-top: 30px;
+				padding-bottom: 30px;
+			}
+			
+			#gbm {
+				cursor: pointer;
+			}
+			
+			nav.navbar.bootsnav {
+				background: none;
+				font-family: 'Sarabun', sans-serif;
+				margin-bottom: 150px;
+				border: none;
+			}
+			
+			nav.navbar.bootsnav ul.nav>li {
+				margin-right: 60px;
+			}
+			
+			nav.navbar.bootsnav ul.nav>li>a {
+				color: #fff;
+				background-color: transparent;
+				font-size: 15px;
+				font-weight: 600;
+				text-transform: uppercase;
+				padding: 10px 15px;
+				border-radius: 0;
+				overflow: hidden;
+				position: relative;
+				transition: all .5s ease;
+				z-index: 1;
+			}
+			
+			nav.navbar.bootsnav ul.nav>li.dropdown>a {
+				padding: 10px 30px 10px 15px;
+			}
+			
+			nav.navbar.bootsnav ul.nav>li.active>a,
+			nav.navbar.bootsnav ul.nav>li.active>a:hover,
+			nav.navbar.bootsnav ul.nav>li>a:hover,
+			nav.navbar.bootsnav ul.nav>li.on>a {
+				color: #fff;
+				background: transparent !important;
+				border-color: transparent;
+			}
+			
+			nav.navbar.bootsnav ul.nav>li>a>span:before,
+			nav.navbar.bootsnav ul.nav>li>a>span:after {
+				content: "";
+				background-color: rgba(255, 255, 255, 0.5);
+				width: 50%;
+				height: 100%;
+				position: absolute;
+				left: -100%;
+				top: 0;
+				transition: all 0.3s ease 0s;
+			}
+			
+			nav.navbar.bootsnav ul.nav>li>a>span:after {
+				width: 100%;
+				height: 2px;
+				top: 50%;
+				transform: translateY(-50%);
+				left: 100%;
+				transition: all 0.3s ease 0.1s;
+			}
+			
+			nav.navbar.bootsnav ul.nav>li:hover>a>span:before,
+			nav.navbar.bootsnav ul.nav>li.active>a>span:before {
+				left: 100%;
+			}
+			
+			nav.navbar.bootsnav ul.nav>li:hover>a>span:after,
+			nav.navbar.bootsnav ul.nav>li.active>a>span:after {
+				left: 0;
+			}
+			
+			nav.navbar.bootsnav li.dropdown ul.dropdown-menu li a {
+				color: #fff !important;
+			}
+			
+			nav.navbar.bootsnav li.dropdown ul.dropdown-menu.megamenu-content li a:hover,
+			nav.navbar.bootsnav li.dropdown ul.dropdown-menu li a:hover,
+			nav.navbar.bootsnav li.dropdown ul.dropdown-menu li a.dropdown-toggle:active,
+			nav.navbar ul.nav li.dropdown.on ul.dropdown-menu li.dropdown.on>a {
+				background: #fff !important;
+				color: #1775e8 !important;
+				box-shadow: 0 0 8px #fff inset;
+			}
+			
+			nav.navbar.bootsnav ul.nav>li.dropdown>a.dropdown-toggle:after {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				margin: 0 0 0 7px;
+			}
+			
+			nav.navbar.bootsnav ul.nav>li.dropdown>ul {
+				top: 100%;
+				transition: all 0.8s ease 0s;
+			}
+			
+			nav.navbar.bootsnav ul.nav>li.dropdown.on>ul {
+				top: 120%;
+			}
+			
+			.dropdown-menu.multi-dropdown {
+				position: absolute;
+				left: -100% !important;
+			}
+			
+			nav.navbar.bootsnav li.dropdown ul.dropdown-menu {
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+				background-color: #1775e8;
+				border: none;
+			}
+			
+			nav.navbar.bootsnav li.dropdown ul.dropdown-menu.megamenu-content li {
+				font-size: 14px;
+			}
+			
+			nav.navbar.bootsnav li.dropdown ul.dropdown-menu.megamenu-content .menu-col li a {
+				padding-left: 10px;
+			}
+			
+			nav.navbar.bootsnav li.dropdown ul.dropdown-menu.megamenu-content .title {
+				color: #fff;
+				font-size: 16px;
+				font-weight: bold;
+			}
+			
+			@media only screen and (max-width:990px) {
+				.dropdown-menu.multi-dropdown {
+					left: 0 !important;
+				}
+				nav.navbar.bootsnav .navbar-toggle {
+					color: #fff;
+					background: transparent !important;
+				}
+				nav.navbar.bootsnav.navbar-mobile .navbar-collapse {
+					background-color: #1775e8;
+				}
+				nav.navbar.bootsnav ul.nav>li {
+					margin: 5px auto 15px;
+				}
+				nav.navbar.bootsnav.navbar-mobile ul.nav>li>a {
+					color: #fff;
+					text-align: center;
+					padding: 10px 15px;
+					border: none;
+				}
+				nav.navbar.bootsnav ul.nav>li.dropdown>a {
+					padding: 10px 10px 10px 17px;
+				}
+				nav.navbar.bootsnav ul.nav>li.active>a,
+				nav.navbar.bootsnav ul.nav>li>a:hover,
+				nav.navbar.bootsnav ul.nav>li.on>a {
+					color: #fff;
+				}
+				nav.navbar.bootsnav ul.nav li.dropdown ul.dropdown-menu>li>a {
+					padding-left: 10px;
+					border-bottom-color: none;
+				}
+				nav.navbar.bootsnav ul.nav>li.dropdown>ul {
+					top: 100%;
+				}
+				nav.navbar.bootsnav li.dropdown ul.dropdown-menu.megamenu-content .title {
+					color: #fff;
+					font-size: 14px;
+					font-weight: normal;
+					padding-left: 10px;
+				}
+			}
+			
+			.button-box {
+				cursor: pointer;
+			}
+			
+			#gblogin {
+				cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="htmleaf-container">
+			<header class="htmleaf-header">
+				<h1>老刘の医院 <span>Your Best Choice</span></h1>
+				<div class="htmleaf-links">
+					<a class="htmleaf-icon icon-htmleaf-home-outline" href="Menu.html" title="老刘の医院"><span> 老刘の医院</span></a>
+					<a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" id="gblogin" title="返回"><span> 返回</span></a>
+				</div>
+			</header>
+			<div class="demo" style="min-height:350px;">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<nav class="navbar navbar-default navbar-mobile bootsnav">
+								<div class="navbar-header">
+									<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                                <i class="fa fa-bars"></i>
+                            </button>
+								</div>
+								<div class="collapse navbar-collapse" id="navbar-menu">
+									<ul class="nav navbar-nav" data-in="fadeInDown" data-out="fadeOutUp">
+										<li class="active">
+											<a href="#" data-hover="Home">Home <span data-hover="Home"></span></a>
+										</li>
+										<li>
+											<a class="button-box" id="about" data-hover="About">About <span data-hover="About"></span></a>
+										</li>
+										<li class="dropdown">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="Shortcodes">项目 <span data-hover="Shortcodes"></span></a>
+											<ul class="dropdown-menu">
+												<li>
+													<a id="blood" class="button-box">血常规</a>
+												</li>
+												<li>
+													<a id="cchao" class="button-box">彩超</a>
+												</li>
+												<li class="dropdown">
+													<a class="dropdown-toggle" id="wind" data-toggle="dropdown">妇科四项</a>
+													<ul class="dropdown-menu">
+														<li>
+															<a id="ray" class="button-box">乳腺红外扫描</a>
+														</li>
+														<li>
+															<a id="knife" class="button-box">宫颈刮片</a>
+														</li>
+														<li class="dropdown">
+															<a id="normal" class="dropdown-toggle" data-toggle="dropdown">妇科常规</a>
+															<ul class="dropdown-menu multi-dropdown">
+																<li>
+																	<a href="#">妇科超声检查</a>
+																</li>
+																<li>
+																	<a href="#">子宫检查</a>
+																</li>
+																<li>
+																	<a href="#">妇科双合诊检查</a>
+																</li>
+																<li>
+																	<a href="#">妇科B超</a>
+																</li>
+															</ul>
+														</li>
+														<li>
+															<a class="button-box" id="heart">乳腺摄影检查</a>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<a class="button-box" id="stomoch">胃镜</a>
+												</li>
+												<li>
+													<a class="button-box" id="pee">尿检</a>
+												</li>
+												<li>
+													<a class="button-box" id="brain">脑CT</a>
+												</li>
+												<li>
+													<a class="button-box" id="comic">核磁共振</a>
+												</li>
+											</ul>
+										</li>
+										<li class="dropdown">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="Pages">科室 <span data-hover="Pages"></span></a>
+											<ul class="dropdown-menu">
+												<li>
+													<a class="button-box" id="inside">内科</a>
+												</li>
+												<li>
+													<a class="button-box" id="child">儿科</a>
+												</li>
+												<li class="dropdown">
+													<a href="#" class="dropdown-toggle" data-toggle="dropdown">外科</a>
+													<ul class="dropdown-menu">
+														<li>
+															<a class="button-box" id="nerse">神经外科</a>
+														</li>
+														<li>
+															<a class="button-box" id="outside">普外科</a>
+														</li>
+														<li class="dropdown">
+															<a href="#" class="dropdown-toggle" data-toggle="dropdown">骨科</a>
+															<ul class="dropdown-menu multi-dropdown">
+																<li>
+																	<a class="button-box" id="bond">骨科</a>
+																</li>
+																<li>
+																	<a class="button-box" id="cbond">小儿骨科</a>
+																</li>
+																<li>
+																	<a class="button-box" id="hbond">创伤骨科</a>
+																</li>
+																<li>
+																	<a class="button-box" id="obond">骨肿瘤科</a>
+																</li>
+															</ul>
+														</li>
+														<li>
+															<a class="button-box" id="x-ray">放射科</a>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<a class="button-box" id="women">妇科</a>
+												</li>
+												<li>
+													<a class="button-box" id="skin">皮肤科</a>
+												</li>
+												<li>
+													<a class="button-box" id="ear">耳鼻喉科</a>
+												</li>
+												<li>
+													<a class="button-box" id="mouth">口腔科</a>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="QueryPatient.html" data-hover="Portfolio">病号<span data-hover="Portfolio"></span></a>
+										</li>
+										<li class="dropdown megamenu-fw">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="Megamenu">药店 <span data-hover="Megamenu"></span></a>
+											<ul class="dropdown-menu megamenu-content" role="menu">
+												<li>
+													<div class="row">
+														<div class="col-menu col-md-3">
+															<h6 class="title">抗生素类</h6>
+															<div class="content">
+																<ul class="menu-col">
+																	<li>
+																		<a class="button-box" id="m1-1">头孢吡肟</a>
+																	</li>
+																	<li>
+																		<a class="button-box" id="m1-2">克拉霉素</a>
+																	</li>
+																	<li>
+																		<a class="button-box" id="m1-3">头孢丙烯</a>
+																	</li>
+																	<li>
+																		<a class="button-box" id="m1-4">头孢匹罗</a>
+																	</li>
+																	<li>
+																		<a class="button-box" id="m1-5">强力霉素</a>
+																	</li>
+																</ul>
+															</div>
+														</div>
+														<!-- end col-3 -->
+														<div class="col-menu col-md-3">
+															<h6 class="title">心血管系统类</h6>
+															<div class="content">
+																<ul class="menu-col">
+																	<li>
+																		<a class="button-box" id="m2-1">单硝酸异山梨酯胶丸</a>
+																	</li>
+																	<li>
+																		<a class="button-box" id="m2-2">地巴唑片</a>
+																	</li>
+																	<li>
+																		<a class="button-box" id="m2-3">磷酸丙吡胺片</a>
+																	</li>
+																	<li>
+																		<a class="button-box" id="m2-4">磷酸二酯酶抑制剂</a>
+																	</li>
+																	<li>
+																		<a class="button-box" id="m2-5">盐酸多巴胺注射液</a>
+																	</li>
+																</ul>
+															</div>
+														</div>
+														<!-- end col-3 -->
+														<div class="col-menu col-md-3">
+															<h6 class="title">消化系统用药</h6>
+															<div class="content">
+																<ul class="menu-col">
+																	<li>
+																		<a class="button-box" id="m3-1">丽珠维三联</a>
+																	</li>
+																	<li>
+																		<a class="button-box" id="m3-2">奥沙拉秦钠</a>
+																	</li>
+																	<li>
+																		<a class="button-box" id="m3-3">甲磺酸加贝酯</a>
+																	</li>
+																	<li>
+																		<a class="button-box" id="m3-4">西咪替了</a>
+																	</li>
+																	<li>
+																		<a class="button-box" id="m3-5">盐酸雷尼替丁片</a>
+																	</li>
+																</ul>
+															</div>
+														</div>
+														<div class="col-menu col-md-3">
+															<h6 class="title">抗风湿类药品</h6>
+															<div class="content">
+																<ul class="menu-col">
+																	<li>
+																		<a class="button-box" id="m4-1">甲氨蝶呤</a>
+																	</li>
+																	<li>
+																		<a class="button-box" id="m4-2">雷公藤总苷</a>
+																	</li>
+																	<li>
+																		<a class="button-box" id="m4-3">硫唑嘌呤</a>
+																	</li>
+																	<li>
+																		<a class="button-box" id="m4-4">非甾体抗炎药</a>
+																	</li>
+																	<li>
+																		<a class="button-box" id="m4-5">青霉胺</a>
+																	</li>
+																</ul>
+															</div>
+														</div>
+														<!-- end col-3 -->
+													</div>
+													<!-- end row -->
+												</li>
+											</ul>
+										</li>
+										<li>
+											<a href="QueryDoctor.html" data-hover="Contact">医生 <span data-hover="Contact"></span></a>
+										</li>
+									</ul>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/layer/layer.js"></script>
+		<script>
+			$('#gblogin').click(function() {
+				if(confirm("将返回登陆界面，是否继续？") == true) {
+					window.location = 'ManagerLogin.html';
+				}
+			});
+		</script>
+		<script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/bootsnav.js"></script>
+		<script type="text/javascript" src="js/MiniDialog-es5.min.js"></script>
+		<script type="text/javascript" src="js/boom.js"></script>
+	</body>
+
+</html>

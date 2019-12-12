@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery全屏焦点图片带图标导航按钮控制图片滑动切换</title>
+<meta name="description" content="jquery全屏焦点图片切换制作图标导航按钮控制图片滑动切换，图片轮播依次上下滑动显示和左右滑动显示。" />
+<link href="css/style1.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/banner.js"></script>
+<!--[if IE 6]>
+<script src="js/DDPngMin.js"></script>
+<script>DD_belatedPNG.fix('.leftimg img,.rightimg img,.ico');</script>
+<![endif]--> 
+</head>
+<body>
+
+	<div class="banner">
+		<div class="frame960 relative">
+			<div class="banner-img absolute">
+				<div class="relative">
+					<div class="leftimg left1" moveInDerection="6" moveInSpeed="1000" moveInType="linear" fadeInSpeed="1000" fadeInType="linear" moveOutDerection="2" moveOutSpeed="1000" moveOutType="linear" fadeOutSpeed="1000" fadeOutType="linear">		
+					</div>
+					<div class="rightimg right1" moveInDerection="2" moveInSpeed="1000" moveInType="linear" fadeInSpeed="1000" fadeInType="linear" moveOutDerection="2" moveOutSpeed="1000" moveOutType="linear" fadeOutSpeed="1000" fadeOutType="linear">
+						<img width="800" height="420" src="images/bannerindex-5/timg%20(1).jpg" alt="老刘的医院"/></a>
+					</div>
+					
+					<div class="leftimg left2" moveInDerection="7" moveInSpeed="1000" moveInType="linear" fadeInSpeed="1000" fadeInType="linear" moveOutDerection="7" moveOutSpeed="700" moveOutType="linear" fadeOutSpeed="700" fadeOutType="linear">
+						<!--<img width="343" height="420"  alt="老刘的医院"/></a>-->
+					</div>
+					<div class="rightimg right2" moveInDerection="3" moveInSpeed="700" moveInType="linear" fadeInSpeed="700" fadeInType="linear" moveOutDerection="3" moveOutSpeed="1500" moveOutType="linear" fadeOutSpeed="700" fadeOutType="linear">
+						<img width="800" height="420" src="images/bannerindex-2/timg%20(2).jpg" alt="老刘的医院"/></a>
+					</div>
+					
+					<div class="leftimg left3" moveInDerection="8" moveInSpeed="700" moveInType="linear" fadeInSpeed="500" fadeInType="linear" moveOutDerection="4" moveOutSpeed="700" moveOutType="linear" fadeOutSpeed="700" fadeOutType="linear">
+						<!--<img width="343" height="420"  alt="病房"/></a>-->
+					</div>
+					<div class="rightimg right3" moveInDerection="4" moveInSpeed="700" moveInType="linear" fadeInSpeed="500" fadeInType="linear" moveOutDerection="4" moveOutSpeed="700" moveOutType="linear" fadeOutSpeed="700" fadeOutType="linear">
+						<img width="800" height="420" src="images/bannerindex-1/timg%20(3).jpg" alt="病房"/></a>
+					</div>
+					
+					<div class="leftimg left4" moveInDerection="3" moveInSpeed="700" moveInType="linear" fadeInSpeed="500" fadeInType="linear" moveOutDerection="3" moveOutSpeed="700" moveOutType="linear" fadeOutSpeed="700" fadeOutType="linear">
+						<!--<img width="273" height="424" alt="护士站"/></a>-->
+					</div>
+					<div class="rightimg right4" moveInDerection="7" moveInSpeed="700" moveInType="linear" fadeInSpeed="500" fadeInType="linear" moveOutDerection="7" moveOutSpeed="700" moveOutType="linear" fadeOutSpeed="700" fadeOutType="linear">
+						<img width="800" height="420" src="images/bannerindex-3/timg%20(4).jpg" alt="护士站"/></a>
+					</div>
+					
+					<div class="leftimg left5" moveInDerection="3" moveInSpeed="700" moveInType="linear" fadeInSpeed="500" fadeInType="linear" moveOutDerection="7" moveOutSpeed="700" moveOutType="linear" fadeOutSpeed="500" fadeOutType="linear">
+						<!--<img width="289" height="420"  alt="鸟瞰图"/></a>-->
+					</div>
+					<div class="rightimg right5" moveInDerection="7" moveInSpeed="700" moveInType="linear" fadeInSpeed="500" fadeInType="linear" moveOutDerection="7" moveOutSpeed="700" moveOutType="linear" fadeOutSpeed="500" fadeOutType="linear">
+						<img width="800" height="420" src="images/bannerindex-4/timg.jpg" alt="鸟瞰图"/></a>
+					</div>
+					
+					<div class="leftimg left6" moveInDerection="2" moveInSpeed="700" moveInType="linear" fadeInSpeed="500" fadeInType="linear" moveOutDerection="6" moveOutSpeed="700" moveOutType="linear" fadeOutSpeed="500" fadeOutType="linear">
+						<!--<img width="343" height="420"  alt="西药房"/></a>-->
+					</div>
+					<div class="rightimg right6" moveInDerection="6" moveInSpeed="700" moveInType="linear" fadeInSpeed="500" fadeInType="linear" moveOutDerection="2" moveOutSpeed="700" moveOutType="linear" fadeOutSpeed="500" fadeOutType="linear">
+						<img width="800" height="420" src="images/bannerindex-6/u=2509195209,682797403&fm=26&gp=0.jpg" alt="西药房"/></a>
+					</div>
+					
+					<div class="leftimg left7" moveInDerection="8" moveInSpeed="700" moveInType="linear" fadeInSpeed="500" fadeInType="linear" moveOutDerection="4" moveOutSpeed="700" moveOutType="linear" fadeOutSpeed="500" fadeOutType="linear">
+						<!--<img width="273" height="424"  alt="诊室"/></a>-->
+					</div>
+					<div class="rightimg right7" moveInDerection="4" moveInSpeed="700" moveInType="linear" fadeInSpeed="500" fadeInType="linear" moveOutDerection="8" moveOutSpeed="1000" moveOutType="linear" fadeOutSpeed="500" fadeOutType="linear">
+						<img width="800" height="420" src="images/bannerindex-7/timg%20(5).jpg" alt="诊室"/></a>
+					</div>
+					
+				</div>
+			</div>
+			<ul class="banner-bt absolute">
+				<li><a class="pointer" target="1"><span class="ico" style="background-image:url('images/bannerindex-5/icon.png')"></span></a></li>
+				<li><a class="pointer" target="2"><span class="ico" style="background-image:url('images/bannerindex-2/icon.png')"></span></a></li>
+				<li><a class="pointer" target="3"><span class="ico" style="background-image:url('images/bannerindex-1/icon.png')"></span></a></li>
+				<li><a class="pointer" target="4"><span class="ico" style="background-image:url('images/bannerindex-3/icon.png')"></span></a></li>
+				<li><a class="pointer" target="5"><span class="ico" style="background-image:url('images/bannerindex-4/icon.png')"></span></a></li>
+				<li><a class="pointer" target="6"><span class="ico" style="background-image:url('images/bannerindex-6/icon.png')"></span></a></li>
+				<li><a class="pointer" target="7"><span class="ico" style="background-image:url('images/bannerindex-7/icon.png')"></span></a></li>
+			</ul>
+		</div>
+	</div>
+	<div style="font-family: '微软雅黑';font-size: 15px;">
+		<center>
+				老刘の医院是一所位于辽宁省大连市金州区，集医疗、科研、教学为一体的大型综合医院。<p /> 它隶属于大连民族大学(是其临床医学院，同时也是中国医学科学院的临床医学研究所，
+				<p> 中华人民共和国卫生部指定的诊治疑难重症的技术指导中心之一。
+				<p/> 老刘の医院在中国乃至世界享有盛名。医院成立于1921年。现任院长刘剑雄。
+				<p/> 老刘の医院是中国最早承担外宾医疗任务的单位，医院专门设立外宾和高干门诊部，开设专门的高干、外宾、特需病区。
+				<p /> 2006年7月28日被中国奥委会定为“国家队运动员医疗服务指定医院”。
+				<p /> 2017年11月11日下午，复旦大学医院管理研究所正式发布了《2016年度中国医院排行榜》和《2016年度中国医院专科声誉排行榜》，
+				<p> 老刘の医院名列榜首。
+			</center>
+	</div>
+</body>
+</html>
