@@ -1,0 +1,95 @@
+		.floor-1{
+			width: 1800px;
+			height: 2000px;
+			margin: 0 auto;
+			background: aliceblue;
+			border: 2px solid black;
+		}
+		.myhead{
+			height: 300px;
+			background: beige;
+		}
+		.img{
+			float: left;
+		}
+		.imghospital{
+			width: 240px;
+			height: 240px;
+			margin: 40px 20px;
+			border-radius: 50%;
+			-moz-border-radius: 50%; 
+			-webkit-border-radius: 50%;
+		}
+		.hospital-name{
+			float: left;	
+			margin-left: 300px;
+			margin-top: 60px;
+			
+		}
+		.medbyDoc{
+			width: 1000px;
+			margin: 0 auto;
+		}
+		.medbyDoc2{
+			
+		}
+		/*.table_1 tr td{
+			width: 200px;
+			border: none;
+ 			border-bottom:1px solid #e4ebeb;
+  			font-size: .875rem;
+		}*/
+		.table_1 tr,
+		.table_1 th,
+		.table_1 td {
+  				border: none;
+  				border-bottom:1px solid #e4ebeb;
+  				font-size: .875rem;
+				}
+		input{
+			width: 200px;
+		}
+		.table_1{
+			background: white;
+  			border-collapse: collapse;
+ 			margin: 1.25em 0 0;
+  			width: 100%;
+		}
+		.table_2{
+			background: white;
+  			border-collapse: collapse;
+ 			margin: 1.25em 0 0;
+  			width: 100%;
+		}
+		.table_3{
+			background: white;
+  			border-collapse: collapse;
+ 			margin: 1.25em 0 0;
+  			width: 100%;
+		}
+		table th,
+		table td {
+ 		 padding: 10px 12px;
+ 		 text-align: left;
+		}
+		table th {
+  background: #56a2cf;
+  color: #ffffff;
+  text-transform: uppercase;<!-- 全部字母转换成大写 -->
+}
+
+table tr td {
+  background: #eaf3f5;
+  color: #999999;
+}
+/*nth-of-type选择器*/
+table tr:nth-of-type(2n+2) td {
+  background: #ffffff;
+}
+		body {
+  background: #e4ebeb;
+  color: #636363;
+  /*font-family: 'Lato', sans-serif;*/
+  line-height: 1.5;
+}
+

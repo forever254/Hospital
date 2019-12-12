@@ -1,0 +1,23 @@
+
+#pdxx{
+	right: 0px;
+	top: 80px;
+	position: fixed;
+	width: 500px;
+	/*background: rosybrown;*/
+	color: white;
+	
+}
+#pdxx table{
+	margin: 10px;
+}
+.jiaohaobtn{
+	background: blanchedalmond;
+	color: black;
+}
+#kyxx{
+	position: fixed;
+	left: 550px;
+}
+
+textarea{ resize:none;}

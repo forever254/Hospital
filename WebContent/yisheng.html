@@ -1,0 +1,286 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+
+<head>
+	<title>I am a 医生</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script type="application/x-javascript">
+		addEventListener("load", function() {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- bootstrap-css -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<!-- //bootstrap-css -->
+	<!-- Custom CSS -->
+	<link href="css/style2.css" rel='stylesheet' type='text/css' />
+	<link href="css/style-responsive.css" rel="stylesheet" />
+	<!-- font CSS -->
+	<!-- font-awesome icons -->
+	<link rel="stylesheet" href="css/font.css" type="text/css" />
+	<link href="css/font-awesome.min.css" rel="stylesheet">
+	<!-- //font-awesome icons -->
+	<script src="js/jquery2.0.3.min.js"></script>
+	<!-- charts -->
+	<script src="js/raphael-min.js"></script>
+	<script src="js/morris.js"></script>
+	<link rel="stylesheet" href="css/morris.css">
+	<link rel="stylesheet" href="css/yisheng.css" />
+	<!-- //charts -->
+
+</head>
+
+<body>
+	<section id="container">
+		<div id="pdxx">
+				<table border="0" width="300" cellpadding="50" cellspacing="40" id="pdxx_table" style="text-align: center; " >
+					<tr>
+						<td>病人姓名</td>
+						
+						<td>病人序号</td>
+						
+						<td>操作</td>
+					</tr>
+				
+				</table>
+		</div>
+		<!--header start-->
+		<header class="header fixed-top clearfix">
+			<!--logo start-->
+			<div class="brand">
+				<a href="index.html" class="logo">
+					Hospital
+				</a>
+				<div class="sidebar-toggle-box">
+					<div class="fa fa-bars"></div>
+				</div>
+			</div>
+			<!--logo end-->
+
+			<div class="nav notify-row" id="top_menu">
+
+			</div>
+			<div class="top-nav clearfix">
+				<!--search & user info start-->
+				<ul class="nav pull-right top-menu">
+					<li>
+						<input type="text" class="form-control search" placeholder=" Search">
+					</li>
+					<!-- user login dropdown start-->
+					<li class="dropdown">
+						<a data-toggle="dropdown" class="dropdown-toggle" href="#">
+							<img alt="" src="images/21.png">
+							<span class="username">John Doe</span>
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu extended logout">
+							<li>
+								<a href="#"><i class=" fa fa-suitcase"></i>Profile</a>
+							</li>
+							<li>
+								<a href="#"><i class="fa fa-cog"></i> Settings</a>
+							</li>
+							<li>
+								<a href="UserLogin.html"><i class="fa fa-key"></i> Log Out</a>
+							</li>
+						</ul>
+					</li>
+					<!-- user login dropdown end -->
+
+				</ul>
+				<!--search & user info end-->
+			</div>
+		</header>
+		<!--header end-->
+		<!--sidebar start-->
+		<aside>
+			<div id="sidebar" class="nav-collapse">
+				<!-- sidebar menu start-->
+				<div class="leftside-navigation">
+
+					<table style="color: #F0F0F0;">
+						<br /><br /><br /><br />
+						<tr>
+							<td>姓名：</td>
+							<td id="brname"></td>
+						</tr>
+						<tr>
+							<td>年龄：</td>
+							<td id="brage"></td>
+						</tr>
+						<tr>
+							<td>性别：</td>
+							<td id="brsex"></td>
+						</tr>
+						<tr>
+							<td>电话：</td>
+							<td id="brphone"></td>
+						</tr>
+						<tr>
+							<td>病人id：</td>
+							<td id="brpid"></td>
+						</tr>
+					</table>
+					<br />
+					<div id="medicine">
+						<h3><span style="color: #F0F0F0;">参考的药物资源</span></h3>
+						<br/>
+						<ul>
+							<!--<li><a href="#">抗生素类</a></li>
+						<li><a href="#">抗生素类</a></li>
+						<li><a href="#">抗生素类</a></li>
+						<li><a href="#">抗生素类</a></li>-->
+							<li class="col-md-10">
+								<select value="抗生素类" id="sel1" class="form-control">
+									<optgroup data-icon="fa fa-share" label="抗生素类">
+										<option value="请选择" hidden="hidden">抗生素类</option>
+										<option value="头孢吡肟">头孢吡肟</option>
+										<option value="克拉霉素">克拉霉素</option>
+										<option value="头孢丙烯">头孢丙烯</option>
+										<option value="头孢匹罗">头孢匹罗</option>
+										<option value="强力霉素">强力霉素</option>
+									</optgroup>
+								</select>
+							</li>
+							<li class="col-md-10">
+								<select value="心血管系统类" id="sel2" class="form-control">
+									<optgroup data-icon="fa fa-share" label="心血管系统类">
+										<option value="请选择" hidden="hidden">心血管系统类</option>
+										<option value="单硝酸异山梨酯胶丸">单硝酸异山梨酯胶丸</option>
+										<option value="地巴唑片">地巴唑片</option>
+										<option value="磷酸丙吡胺片">磷酸丙吡胺片</option>
+										<option value="磷酸二酯酶抑制剂">磷酸二酯酶抑制剂</option>
+										<option value="盐酸多巴胺注射液">盐酸多巴胺注射液</option>
+									</optgroup>
+								</select>
+							</li>
+							<li class="col-md-10">
+								<select value="消化系统类" id="sel3" class="form-control">
+									<optgroup data-icon="fa fa-share" label="消化系统类">
+										<option value="请选择" hidden="hidden">消化系统类</option>
+										<option value="丽珠维三联">丽珠维三联</option>
+										<option value="奥沙拉秦钠">奥沙拉秦钠</option>
+										<option value="甲磺酸加贝酯">甲磺酸加贝酯</option>
+										<option value="西咪替了">西咪替了</option>
+										<option value="盐酸雷尼替丁片">盐酸雷尼替丁片</option>
+									</optgroup>
+								</select>
+							</li>
+							<li class="col-md-10">
+								<select value="抗风湿类" id="sel4" class="form-control">
+									<optgroup data-icon="fa fa-share" label="抗风湿类">
+										<option value="请选择" hidden="hidden">抗风湿类</option>
+										<option value="甲氨蝶呤">甲氨蝶呤</option>
+										<option value="雷公藤总苷">雷公藤总苷</option>
+										<option value="硫唑嘌呤">硫唑嘌呤</option>
+										<option value="非甾体抗炎药">非甾体抗炎药</option>
+										<option value="青霉胺">青霉胺</option>
+									</optgroup>
+								</select>
+							</li>
+						</ul>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						
+						<h3><span style="color: #F0F0F0;">检查项目资源</span></h3>
+						<ul id="xmjc">
+
+						</ul>
+					</div>
+
+				</div>
+				<!-- sidebar menu end-->
+			</div>
+		</aside>
+		<section class=" wrapper">
+			<div id="bqms">
+				<div style="text-align: center;">
+					<h3 id="h3">
+						医生ID：<input type="text" style="width: 200px;background:rgba(0, 0, 0, 0.2);" id="ysid">
+						医生姓名：<input type="text" style="width: 200px;background:rgba(0, 0, 0, 0.2);" id="ysname">
+						<button id="gets" class="btn btn-default">确定</button>
+					</h3>
+					<span>诊断时间：</span>
+					<span id="cg">2016/12/21 上午 12:00:00</span>
+					<script>
+						setInterval("cg.innerHTML=new Date().toLocaleString()", 1000);
+					</script>
+				</div>
+				<div style="text-align: center;">
+					<p>病情诊断报告</p>
+					<textarea style="width: 800px; height: 300px;background:rgba(0, 0, 0, 0.2);" cols="100" id="textarea">
+						
+					</textarea>
+				</div>
+				<div ></div>
+				<div style="text-align:center;">
+
+					<input type="button" value="生成报告" id="scbg"  class="btn btn-default" style="color: #FFFFFF;background:rgba(0, 0, 0, 0.2);"/>
+				</div>	
+				<div id="kyxx"  >
+					<table border="0" cellspacing="" cellpadding="">
+						<tr>
+							<th>
+								<table style="width: 370px;" border="1" id="med">
+									<tr>
+										<th width="70%">药物名</th>
+										<th width="20%">药物数量</th>
+										<th width="10%"></th>
+									</tr>
+								</table>
+							</th>
+							<th>
+								<table style=" width: 550px;" border="1" id="jctable">
+									<tr>
+										<th width="20%" class="col-lg-2">检查项目名</th>
+										<th width="75%" class="col-lg-2">检查项目注意事项</th>
+										<th width="5%" class="col-lg-2"></th>
+									</tr>
+
+								</table>
+							</th>
+						</tr>
+
+					</table>
+
+				</div>
+
+				<!--<div style="position: absolute; width:260px; right:850px; top: 900px;">
+
+					<input type="button" value="生成报告" id="scbg"  class="btn btn-default"/>
+				</div>-->
+
+			</div>
+			
+
+		</section>
+	</section>
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js" ></script>
+	<script type="text/javascript" src="js/QueryMedicine.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.dcjqaccordion.2.7.js"></script>
+	<script src="js/scripts.js"></script>
+	<script src="js/jquery.slimscroll.js"></script>
+	<script src="js/jquery.nicescroll.js"></script>
+	<script src="js/jquery.scrollTo.js"></script>
+	<script type="text/javascript" src="js/yisheng.js"></script>
+</body>
+
+</html>

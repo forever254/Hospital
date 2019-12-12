@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>查询医生界面</title>
+		<!--<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>-->
+		<script type="text/javascript" src="js/jquery-1.11.0.min.js" ></script>
+		<script src="js/tableXR.js"></script>
+	</head>
+
+	<body>
+		<div id="root" style="width: 800px;margin: 0 auto;"></div>
+		<script type="text/javascript">
+			$('#root').tableXR({
+				//表格标题
+				title: '医生查询列表',
+				//表格头部设置
+				columns: [{
+						data: 'D_id',
+						title: '医生编号'
+					},
+					{
+						data: 'D_name',
+						title: '医生姓名'
+					},
+					{
+						data: 'D_sex',
+						title: '医生性别'
+					}, 
+					{
+						data: 'D_age',
+						title: '医生年龄'
+					},
+					{
+						data: 'D_phone',
+						title: '联系电话'
+					},
+					{
+						data: 'D_level',
+						title: '医生等级'
+					},
+					{
+						data: 'K_idFK',
+						title: '科室号'
+					},
+					{
+						data: 'D_exp',
+						title: '从医经验'
+					}
+				],
+				//表格数据：
+				data: [{
+					    D_id:'500',
+						D_name: '王维',
+						D_sex:'男',
+						D_age: '34',
+						D_phone:'18742023425',
+						D_level: '普通医师',
+						K_idFK:'101',
+						D_exp:'医术高超的中年医师'
+					},
+					{
+						D_id:'501',
+						D_name: '赵维',
+						D_sex:'男',
+						D_age: '34',
+						D_phone:'18742023425',
+						D_level: '专业医师',
+						K_idFK:'101',
+						D_exp:'医术高超的中年医师'
+					},
+					{
+						D_id:'502',
+						D_name: '钱维',
+						D_sex:'男',
+						D_age: '34',
+						D_phone:'18742023425',
+						D_level: '普通医师',
+						K_idFK:'102',
+						D_exp:'医术高超的中年医师'
+					},
+					{
+						D_id:'503',
+						D_name: '孙维',
+						D_sex:'男',
+						D_age: '34',
+						D_phone:'18742023425',
+						D_level: '普通医师',
+						K_idFK:'102',
+						D_exp:'医术高超的中年医师'
+					},
+					{
+						D_id:'504',
+						D_name: '李维',
+						D_sex:'男',
+						D_age: '45',
+						D_phone:'18742023425',
+						D_level: '专业医师',
+						K_idFK:'102',
+						D_exp:'医术高超的中年医师'
+					},
+					{
+						D_id:'505',
+						D_name: '周维',
+						D_sex:'男',
+						D_age: '34',
+						D_phone:'18742023425',
+						D_level: '普通医师',
+						K_idFK:'103',
+						D_exp:'医术高超的中年医师'
+					},
+					{
+						D_id:'506',
+						D_name: '吴维',
+						D_sex:'男',
+						D_age: '34',
+						D_phone:'18742023425',
+						D_level: '专业医师',
+						K_idFK:'103',
+						D_exp:'医术高超的中年医师'
+					},
+					{
+						D_id:'507',
+						D_name: '郑维',
+						D_sex:'男',
+						D_age: '34',
+						D_phone:'18742023425',
+						D_level: '普通医师',
+						K_idFK:'104',
+						D_exp:'医术高超的中年医师'
+					},
+					{
+						D_id:'508',
+						D_name: '王小维',
+						D_sex:'男',
+						D_age: '34',
+						D_phone:'18742023425',
+						D_level: '普通医师',
+						K_idFK:'101',
+						D_exp:'医术高超的中年医师'
+					},
+					{
+						D_id:'509',
+						D_name: '张维',
+						D_sex:'男',
+						D_age: '34',
+						D_phone:'18742023425',
+						D_level: '低级医师',
+						K_idFK:'101',
+						D_exp:'辣鸡实习工'
+					},
+					{
+						D_id:'510',
+						D_name: '张大维',
+						D_sex:'男',
+						D_age: '34',
+						D_phone:'18742023425',
+						D_level: '普通医师',
+						K_idFK:'105',
+						D_exp:'医术高超的中年医师'
+					},
+					{
+						D_id:'511',
+						D_name: '张二维',
+						D_sex:'男',
+						D_age: '20',
+						D_phone:'18742023425',
+						D_level: '普通医师',
+						K_idFK:'104',
+						D_exp:'医术高超的中年医师'
+					},
+					{
+						D_id:'512',
+						D_name: '王维',
+						D_sex:'男',
+						D_age: '34',
+						D_phone:'18742023425',
+						D_level: '普通医师',
+						K_idFK:'101',
+						D_exp:'医术高超的中年医师'
+					},
+					{
+						D_id:'513',
+						D_name: '王维',
+						D_sex:'男',
+						D_age: '34',
+						D_phone:'18742023425',
+						D_level: '普通医师',
+						K_idFK:'101',
+						D_exp:'医术高超的中年医师'
+					},
+				]
+			})
+		</script>
+	</body>
+
+</html>
